@@ -45,6 +45,7 @@ export default function TicketSection() {
     ruby: 0,
   });
   const [donationAmount, setDonationAmount] = useState("");
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const updateQty = (id: string, delta: number) => {
     setQuantities((prev) => ({
@@ -56,16 +57,41 @@ export default function TicketSection() {
   const totalTickets = Object.values(quantities).reduce((a, b) => a + b, 0);
   const totalPrice = tiers.reduce((sum, t) => sum + (quantities[t.id] || 0) * t.price, 0);
 
+  const doCheckout = async (lineItems: { name: string; price: number; unitQty: number }[]) => {
+    setCheckoutLoading(true);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ lineItems }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      window.location.href = data.checkoutUrl;
+    } catch {
+      alert("Unable to connect to payment service. Please try again.");
+    } finally {
+      setCheckoutLoading(false);
+    }
+  };
+
   const handleCheckout = () => {
     if (totalTickets === 0) return;
 
-    let summary = "Your Order:\n";
-    for (const t of tiers) {
-      const qty = quantities[t.id];
-      if (qty > 0) summary += `${qty}× ${t.name} ($${qty * t.price})\n`;
-    }
-    summary += `\nTotal: $${totalPrice}\n\nPayment processing will be connected via Clover. Thank you for supporting animal rescues! 🐾`;
-    alert(summary);
+    const lineItems = tiers
+      .filter((t) => quantities[t.id] > 0)
+      .map((t) => ({
+        name: t.name,
+        price: t.price * 100, // Clover expects cents
+        unitQty: quantities[t.id],
+      }));
+
+    doCheckout(lineItems);
   };
 
   const handleDonation = () => {
@@ -74,9 +100,14 @@ export default function TicketSection() {
       alert("Please enter a donation amount.");
       return;
     }
-    alert(
-      `Thank you for your generous donation of $${amount}! 🐾\n\nDonation processing will be connected via Clover. Your support means the world to our furry friends!`
-    );
+
+    doCheckout([
+      {
+        name: "Donation to Wooffstock",
+        price: Math.round(amount * 100), // Clover expects cents
+        unitQty: 1,
+      },
+    ]);
   };
 
   return (
@@ -172,8 +203,8 @@ export default function TicketSection() {
             {totalTickets} ticket{totalTickets !== 1 ? "s" : ""}
           </div>
         </div>
-        <button className="checkout-btn" onClick={handleCheckout}>
-          Proceed to Checkout
+        <button className="checkout-btn" onClick={handleCheckout} disabled={checkoutLoading}>
+          {checkoutLoading ? "Redirecting..." : "Proceed to Checkout"}
         </button>
       </div>
     </section>
