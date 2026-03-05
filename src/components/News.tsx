@@ -57,10 +57,15 @@ export default function News() {
 
       <FadeIn>
         <div className="news-video">
-          <video controls width="100%">
-            <source src="/videos/wooffstock.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {/* TODO: Replace YOUTUBE_VIDEO_ID with actual video ID once uploaded */}
+          <iframe
+            width="100%"
+            style={{ aspectRatio: "16 / 9", border: "none" }}
+            src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
+            title="Wooffstock Highlights"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
           <div className="news-caption">
             <div className="news-source">Wooffstock</div>
             <div className="news-headline">Watch the Highlights</div>
