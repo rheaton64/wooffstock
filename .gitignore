@@ -34,6 +34,12 @@ yarn-error.log*
 .env*
 !.env.example
 
+# reference files (large originals, not needed in repo)
+/reference/
+
+# screenshots
+photos_*.png
+
 # vercel
 .vercel
 
