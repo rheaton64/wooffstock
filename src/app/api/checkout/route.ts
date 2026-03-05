@@ -69,10 +69,13 @@ export async function POST(request: NextRequest) {
               note: item.note || "Wooffstock 2026",
             })),
           },
-          redirectUrls: {
-            success: `${origin}/checkout/success`,
-            failure: `${origin}/checkout/failure`,
-          },
+          // Clover requires HTTPS redirect URLs — only include when not on localhost
+          ...(origin.startsWith("https://") && {
+            redirectUrls: {
+              success: `${origin}/checkout/success`,
+              failure: `${origin}/checkout/failure`,
+            },
+          }),
         }),
       }
     );
