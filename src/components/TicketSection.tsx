@@ -215,6 +215,11 @@ export default function TicketSection() {
           <div className="cart-total">${totalPrice}</div>
           <div className="cart-items-text">
             {totalTickets} ticket{totalTickets !== 1 ? "s" : ""}
+            {": "}
+            {tiers
+              .filter((t) => cart[t.id] > 0)
+              .map((t) => `${cart[t.id]}× ${t.name.split(" the ")[0]}`)
+              .join(", ")}
           </div>
         </div>
         <div className="cart-actions">
