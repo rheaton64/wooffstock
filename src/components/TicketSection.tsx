@@ -39,23 +39,37 @@ const tiers: TicketTier[] = [
 ];
 
 export default function TicketSection() {
-  const [quantities, setQuantities] = useState<Record<string, number>>({
+  // Cart = confirmed quantities, pending = what the +/- buttons adjust before "Add to Cart"
+  const [cart, setCart] = useState<Record<string, number>>({
     robbie: 0,
     dottie: 0,
     ruby: 0,
   });
+  const [pending, setPending] = useState<Record<string, number>>({
+    robbie: 1,
+    dottie: 1,
+    ruby: 1,
+  });
   const [donationAmount, setDonationAmount] = useState("");
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
-  const updateQty = (id: string, delta: number) => {
-    setQuantities((prev) => ({
+  const updatePending = (id: string, delta: number) => {
+    setPending((prev) => ({
       ...prev,
-      [id]: Math.max(0, (prev[id] || 0) + delta),
+      [id]: Math.max(1, (prev[id] || 1) + delta),
     }));
   };
 
-  const totalTickets = Object.values(quantities).reduce((a, b) => a + b, 0);
-  const totalPrice = tiers.reduce((sum, t) => sum + (quantities[t.id] || 0) * t.price, 0);
+  const addToCart = (id: string) => {
+    setCart((prev) => ({
+      ...prev,
+      [id]: (prev[id] || 0) + pending[id],
+    }));
+    setPending((prev) => ({ ...prev, [id]: 1 }));
+  };
+
+  const totalTickets = Object.values(cart).reduce((a, b) => a + b, 0);
+  const totalPrice = tiers.reduce((sum, t) => sum + (cart[t.id] || 0) * t.price, 0);
 
   const doCheckout = async (lineItems: { name: string; price: number; unitQty: number }[]) => {
     setCheckoutLoading(true);
@@ -84,11 +98,11 @@ export default function TicketSection() {
     if (totalTickets === 0) return;
 
     const lineItems = tiers
-      .filter((t) => quantities[t.id] > 0)
+      .filter((t) => cart[t.id] > 0)
       .map((t) => ({
         name: t.name,
         price: t.price * 100, // Clover expects cents
-        unitQty: quantities[t.id],
+        unitQty: cart[t.id],
       }));
 
     doCheckout(lineItems);
@@ -144,15 +158,15 @@ export default function TicketSection() {
                   ))}
                 </ul>
                 <div className="ticket-qty">
-                  <button className="qty-btn" onClick={() => updateQty(tier.id, -1)}>
+                  <button className="qty-btn" onClick={() => updatePending(tier.id, -1)}>
                     −
                   </button>
-                  <span className="qty-display">{quantities[tier.id]}</span>
-                  <button className="qty-btn" onClick={() => updateQty(tier.id, 1)}>
+                  <span className="qty-display">{pending[tier.id]}</span>
+                  <button className="qty-btn" onClick={() => updatePending(tier.id, 1)}>
                     +
                   </button>
                 </div>
-                <button className="ticket-btn" onClick={() => updateQty(tier.id, 1)}>
+                <button className="ticket-btn" onClick={() => addToCart(tier.id)}>
                   Add to Cart
                 </button>
               </div>
@@ -206,7 +220,7 @@ export default function TicketSection() {
         <div className="cart-actions">
           <button
             className="cart-clear-btn"
-            onClick={() => setQuantities({ robbie: 0, dottie: 0, ruby: 0 })}
+            onClick={() => setCart({ robbie: 0, dottie: 0, ruby: 0 })}
             title="Clear cart"
           >
             🗑
