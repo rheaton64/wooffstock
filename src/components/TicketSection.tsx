@@ -203,9 +203,18 @@ export default function TicketSection() {
             {totalTickets} ticket{totalTickets !== 1 ? "s" : ""}
           </div>
         </div>
-        <button className="checkout-btn" onClick={handleCheckout} disabled={checkoutLoading}>
-          {checkoutLoading ? "Redirecting..." : "Proceed to Checkout"}
-        </button>
+        <div className="cart-actions">
+          <button
+            className="cart-clear-btn"
+            onClick={() => setQuantities({ robbie: 0, dottie: 0, ruby: 0 })}
+            title="Clear cart"
+          >
+            🗑
+          </button>
+          <button className="checkout-btn" onClick={handleCheckout} disabled={checkoutLoading}>
+            {checkoutLoading ? "Redirecting..." : "Proceed to Checkout"}
+          </button>
+        </div>
       </div>
     </section>
   );
