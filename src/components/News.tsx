@@ -55,9 +55,9 @@ export default function News() {
         </FadeIn>
       </div>
 
+      {/* Video hidden until YouTube link is ready
       <FadeIn>
         <div className="news-video">
-          {/* TODO: Replace YOUTUBE_VIDEO_ID with actual video ID once uploaded */}
           <iframe
             width="100%"
             style={{ aspectRatio: "16 / 9", border: "none" }}
@@ -72,6 +72,7 @@ export default function News() {
           </div>
         </div>
       </FadeIn>
+      */}
     </section>
   );
 }

@@ -1071,6 +1071,7 @@ footer {
   nav { padding: 12px 20px; }
   .nav-links { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
   .tickets-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
   .hero-details { gap: 20px; }
   .hero-divider { display: none; }
@@ -1085,7 +1086,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .rescues-grid { grid-template-columns: 1fr; max-width: 280px; }
+  .rescues-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ========== MOBILE NAV ========== */
