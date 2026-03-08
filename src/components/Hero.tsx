@@ -26,7 +26,7 @@ export default function Hero() {
 
       <h1>Wooffstock</h1>
       <p className="hero-subtitle" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}>
-        Presents an evening to benefit local animal rescues
+        Presents an evening to benefit{" "}<span style={{ fontWeight: 900, letterSpacing: "1px", marginLeft: "6px" }}>Local Animal Rescues</span>
       </p>
       <p className="hero-subtitle" style={{ marginTop: "-16px" }}>
         Honoring Dr. Renee Bayha

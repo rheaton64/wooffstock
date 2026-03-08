@@ -36,7 +36,7 @@ export default function CheckoutSuccess() {
           fontWeight: 300,
         }}
       >
-        Your purchase is confirmed. We can&apos;t wait to see you at Wooffstock on May 2nd!
+        Your support means the world to our rescue friends.
         Check your email for your receipt.
       </p>
       <Link
