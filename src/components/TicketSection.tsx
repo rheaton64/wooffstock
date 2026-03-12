@@ -135,7 +135,10 @@ export default function TicketSection() {
       <FadeIn><div className="section-label">Tickets</div></FadeIn>
       <FadeIn><div className="section-title">Reserve Your Spot</div></FadeIn>
       <FadeIn>
-        <div className="section-subtitle">Choose your tier and join us for an unforgettable evening. Your receipt is your ticket.</div>
+        <div className="section-subtitle">
+          <div>Choose your tier and join us for an unforgettable evening.</div>
+          <div>Your receipt is your ticket.</div>
+        </div>
       </FadeIn>
 
       <div className="tickets-grid">
