@@ -51,6 +51,7 @@ export default function TicketSection() {
     ruby: 1,
   });
   const [donationAmount, setDonationAmount] = useState("");
+  const [donationInCart, setDonationInCart] = useState(0);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   const updatePending = (id: string, delta: number) => {
@@ -69,7 +70,9 @@ export default function TicketSection() {
   };
 
   const totalTickets = Object.values(cart).reduce((a, b) => a + b, 0);
-  const totalPrice = tiers.reduce((sum, t) => sum + (cart[t.id] || 0) * t.price, 0);
+  const ticketPrice = tiers.reduce((sum, t) => sum + (cart[t.id] || 0) * t.price, 0);
+  const totalPrice = ticketPrice + donationInCart;
+  const hasItems = totalTickets > 0 || donationInCart > 0;
 
   const doCheckout = async (lineItems: { name: string; price: number; unitQty: number }[]) => {
     setCheckoutLoading(true);
@@ -95,7 +98,7 @@ export default function TicketSection() {
   };
 
   const handleCheckout = () => {
-    if (totalTickets === 0) return;
+    if (!hasItems) return;
 
     const lineItems = tiers
       .filter((t) => cart[t.id] > 0)
@@ -104,6 +107,14 @@ export default function TicketSection() {
         price: t.price * 100, // Clover expects cents
         unitQty: cart[t.id],
       }));
+
+    if (donationInCart > 0) {
+      lineItems.push({
+        name: "Donation to Wooffstock",
+        price: Math.round(donationInCart * 100),
+        unitQty: 1,
+      });
+    }
 
     doCheckout(lineItems);
   };
@@ -115,13 +126,8 @@ export default function TicketSection() {
       return;
     }
 
-    doCheckout([
-      {
-        name: "Donation to Wooffstock",
-        price: Math.round(amount * 100), // Clover expects cents
-        unitQty: 1,
-      },
-    ]);
+    setDonationInCart(amount);
+    setDonationAmount("");
   };
 
   return (
@@ -202,30 +208,38 @@ export default function TicketSection() {
                 />
               </div>
               <button className="donation-btn" onClick={handleDonation}>
-                Donate Now
+                Add to Cart
               </button>
             </div>
           </div>
         </div>
       </FadeIn>
 
-      <div className={`cart-summary${totalTickets > 0 ? " visible" : ""}`}>
+      <div className={`cart-summary${hasItems ? " visible" : ""}`}>
         <div className="cart-info">
           <div className="cart-label">Your Order</div>
           <div className="cart-total">${totalPrice}</div>
           <div className="cart-items-text">
-            {totalTickets} ticket{totalTickets !== 1 ? "s" : ""}
-            {": "}
-            {tiers
-              .filter((t) => cart[t.id] > 0)
-              .map((t) => `${cart[t.id]}× ${t.name.split(" the ")[0]}`)
-              .join(", ")}
+            {[
+              totalTickets > 0
+                ? `${totalTickets} ticket${totalTickets !== 1 ? "s" : ""}: ${tiers
+                    .filter((t) => cart[t.id] > 0)
+                    .map((t) => `${cart[t.id]}× ${t.name.split(" the ")[0]}`)
+                    .join(", ")}`
+                : null,
+              donationInCart > 0 ? `$${donationInCart} donation` : null,
+            ]
+              .filter(Boolean)
+              .join(" + ")}
           </div>
         </div>
         <div className="cart-actions">
           <button
             className="cart-clear-btn"
-            onClick={() => setCart({ robbie: 0, dottie: 0, ruby: 0 })}
+            onClick={() => {
+              setCart({ robbie: 0, dottie: 0, ruby: 0 });
+              setDonationInCart(0);
+            }}
             title="Clear cart"
           >
             🗑
