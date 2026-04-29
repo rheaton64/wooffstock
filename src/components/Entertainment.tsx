@@ -2,7 +2,7 @@ import FadeIn from "./FadeIn";
 
 const features = [
   { icon: "🎨", title: "Art Sale", desc: "Browse and purchase original artwork" },
-  { icon: "🎵", title: "Live Jazz", desc: "The Rufus Jones Jazz Trio" },
+  { icon: "🎵", title: "Live Americana", desc: "The Rufus Jones Trio" },
   { icon: "🍷", title: "Wine", desc: "Curated wine selections" },
   { icon: "🥃", title: "Bourbon Bar", desc: "Premium bourbon tastings" },
   { icon: "🍽️", title: "Hors-d'oeuvres", desc: "Delicious bites all evening" },

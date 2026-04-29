@@ -29,7 +29,7 @@ export default function Navbar() {
         <a href="#rescues" onClick={scrollTo}>Those We Help</a>
         <a href="#news" onClick={scrollTo}>News</a>
         <a href="#tickets" className="nav-cta" onClick={scrollTo}>
-          Get Tickets
+          Donate
         </a>
       </div>
       <button
@@ -40,7 +40,7 @@ export default function Navbar() {
             ?.scrollIntoView({ behavior: "smooth" })
         }
       >
-        🎟️ Tickets
+        🐾 Donate
       </button>
     </nav>
   );

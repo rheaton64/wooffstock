@@ -15,7 +15,7 @@ export default function About() {
         <FadeIn>
           <div className="about-text">
             <p>
-              Wooffstock is a one-of-a-kind fundraiser bringing together the community for an evening of live jazz, an
+              Wooffstock is a one-of-a-kind fundraiser bringing together the community for an evening of live Americana, an
               art sale, fine wine, a bourbon bar, cigar aficionado, hors-d&apos;oeuvres, and a silent auction — all in
               support of local animal rescues.
             </p>

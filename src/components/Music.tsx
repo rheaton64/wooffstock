@@ -12,7 +12,7 @@ export default function Music() {
             </FadeIn>
             <FadeIn>
                 <div className="section-subtitle">
-                    An evening of smooth jazz to set the perfect mood.
+                    An evening of live Americana to set the perfect mood.
                 </div>
             </FadeIn>
 
@@ -25,7 +25,7 @@ export default function Music() {
                         height={280}
                         className="rufus-photo"
                     />
-                    <div className="band-name">The Rufus Jones Jazz Trio</div>
+                    <div className="band-name">The Rufus Jones Trio</div>
                     <div className="band-members">
                         Featuring <strong>John Osborne</strong> on Piano
                         <br />

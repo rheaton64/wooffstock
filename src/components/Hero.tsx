@@ -57,7 +57,7 @@ export default function Hero() {
           document.getElementById("tickets")?.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        Get Your Tickets
+        Make a Donation
       </a>
     </section>
   );
