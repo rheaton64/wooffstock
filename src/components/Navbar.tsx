@@ -22,12 +22,11 @@ export default function Navbar() {
     <nav className={scrolled ? "scrolled" : ""}>
       <div className="nav-brand">Wooffstock</div>
       <div className="nav-links">
+        <a href="#dont-miss" onClick={scrollTo}>Don&apos;t Miss</a>
         <a href="#about" onClick={scrollTo}>About</a>
-        <a href="#entertainment" onClick={scrollTo}>Entertainment</a>
-        <a href="#music" onClick={scrollTo}>Music</a>
-        <a href="#honoree" onClick={scrollTo}>Honoree</a>
         <a href="#rescues" onClick={scrollTo}>Those We Help</a>
         <a href="#news" onClick={scrollTo}>News</a>
+        <a href="#looking-back" onClick={scrollTo}>Looking Back</a>
         <a href="#tickets" className="nav-cta" onClick={scrollTo}>
           Donate
         </a>

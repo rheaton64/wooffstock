@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import DontMiss from "@/components/DontMiss";
 import About from "@/components/About";
-import Entertainment from "@/components/Entertainment";
-import Music from "@/components/Music";
+import Retrospective from "@/components/Retrospective";
 import Honoree from "@/components/Honoree";
 import Rescues from "@/components/Rescues";
 import News from "@/components/News";
@@ -14,12 +14,12 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <DontMiss />
       <About />
-      <Entertainment />
-      <Music />
-      <Honoree />
       <Rescues />
       <News />
+      <Retrospective />
+      <Honoree />
       <TicketSection />
       <Footer />
     </>

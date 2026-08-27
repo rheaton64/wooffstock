@@ -27,14 +27,14 @@ export const metadata: Metadata = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"
   ),
-  title: "Wooffstock — An Evening to Benefit Local Animal Rescues",
+  title: "Wooffstock — Rescue Pet Adoption Day and Blessing of the Animals",
   description:
-    "Join us for a magical night of art, music, and community — all to support our furry friends in need. Saturday, May 2nd at Waccabuc Country Club.",
+    "Join us for our 3rd Annual Rescue Pet Adoption Day and Blessing of the Animals, with guest musical artist Alex Cano. Sunday, October 4th, 1:00–4:00 PM at Pound Ridge Community Church.",
   openGraph: {
-    title: "Wooffstock — An Evening to Benefit Local Animal Rescues",
+    title: "Wooffstock — Rescue Pet Adoption Day and Blessing of the Animals",
     description:
-      "Join us for a magical night of art, music, and community — all to support our furry friends in need. Saturday, May 2nd at Waccabuc Country Club.",
-    images: [{ url: "/images/logo.jpg", width: 220, height: 220 }],
+      "Join us for our 3rd Annual Rescue Pet Adoption Day and Blessing of the Animals, with guest musical artist Alex Cano. Sunday, October 4th, 1:00–4:00 PM at Pound Ridge Community Church.",
+    images: [{ url: "/images/wooffstock-lockup.png", width: 1512, height: 579 }],
   },
 };
 
