@@ -107,6 +107,18 @@ nav.scrolled {
 .nav-links a:hover { color: var(--gold-light); }
 .nav-links a:hover::after { width: 100%; }
 
+.nav-back {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+.nav-back:hover { color: var(--cream); }
+
 .nav-cta {
   background: var(--gold) !important;
   color: var(--charcoal) !important;
@@ -579,47 +591,6 @@ section { padding: 100px 20px; }
   transition: color 0.3s;
 }
 .retro-text a:hover { color: var(--amber); }
-
-.retro-stats {
-  display: flex;
-  gap: 50px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-.retro-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.retro-stat-number {
-  font-family: var(--font-playfair), 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 900;
-  color: var(--gold);
-}
-
-.retro-stat-label {
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--rust);
-}
-
-.retro-stat-divider {
-  width: 1px;
-  height: 70px;
-  background: rgba(160, 82, 45, 0.25);
-}
-
-@media (max-width: 900px) {
-  .retro-stats { gap: 30px; }
-  .retro-stat-divider { display: none; }
-}
 
 /* ========== FEATURES ========== */
 .features { background: var(--bg-warm); }

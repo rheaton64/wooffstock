@@ -21,8 +21,8 @@ export default function About() {
               host our third annual Adoption and Blessing Day on October 4, 2026.
             </p>
             <p>
-              We strive to support local shelters in their mission to save, rehabilitate, and find
-              forever homes for animals in need.
+              We strive to help support local shelters in their mission to save, rehabilitate, and
+              find forever homes for animals in need.
             </p>
           </div>
         </FadeIn>
@@ -30,7 +30,7 @@ export default function About() {
           <div className="about-highlight">
             <h3>100% to the Rescues</h3>
             <p>
-              We are entirely volunteer run, and 100% of proceeds raised go directly to our local
+              We are entirely volunteer run, and 100% of profits raised go directly to our local
               rescue partners.
             </p>
           </div>
@@ -49,11 +49,8 @@ export default function About() {
           <p style={{ fontFamily: "var(--font-sacramento), 'Sacramento', cursive", fontSize: "1.4rem", color: "var(--gold)", marginBottom: "0.5rem" }}>
             Lovingly organized by our Planning Committee
           </p>
-          <p style={{ fontSize: "0.95rem", color: "var(--charcoal)", letterSpacing: "0.03em", marginBottom: "0.2rem" }}>
-            Nadine Ashby · Nancy Heaton · Laura Prichard · Betsy Ronel
-          </p>
           <p style={{ fontSize: "0.95rem", color: "var(--charcoal)", letterSpacing: "0.03em" }}>
-            Stacy Brunner · Liz Gossett · Ryan Heaton · Lily Moss · Elisabeth Post-Marner
+            Nadine Ashby · Nancy Heaton · Laura Prichard · Ryan Heaton
           </p>
         </div>
       </FadeIn>

@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-logo">WOOFFSTOCK</div>
-      <div className="footer-tagline">Sponsored by Pound Ridge Community Church and Wooffstock Press</div>
+      <div className="footer-tagline">Sponsored by Wooffstock Press and Pound Ridge Community Church</div>
       <div className="footer-info">
         Sunday, October 4th · 1:00 – 4:00 PM · Pound Ridge Community Church, Pound Ridge, NY
       </div>

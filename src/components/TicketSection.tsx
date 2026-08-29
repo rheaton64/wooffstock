@@ -54,15 +54,6 @@ export default function TicketSection() {
                 <div className="section-title">Make a Donation</div>
             </FadeIn>
             <FadeIn>
-                <div className="section-subtitle">
-                    <div>
-                        Every dollar goes directly to our local rescue
-                        partners and the animals in their care.
-                    </div>
-                </div>
-            </FadeIn>
-
-            <FadeIn>
                 <div className="donation-section">
                     <div className="donation-inner">
                         <Image
