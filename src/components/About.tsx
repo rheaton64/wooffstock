@@ -50,7 +50,7 @@ export default function About() {
             Lovingly organized by our Planning Committee
           </p>
           <p style={{ fontSize: "0.95rem", color: "var(--charcoal)", letterSpacing: "0.03em" }}>
-            Nadine Ashby · Nancy Heaton · Laura Prichard · Ryan Heaton
+            Nadine Ashby · Nancy Heaton · Laura Prichard
           </p>
         </div>
       </FadeIn>
