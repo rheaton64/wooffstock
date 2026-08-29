@@ -6,11 +6,6 @@ export default function DontMiss() {
     <section className="dont-miss" id="dont-miss">
       <FadeIn><div className="section-label">October 4th</div></FadeIn>
       <FadeIn><div className="section-title">Don&apos;t Miss</div></FadeIn>
-      <FadeIn>
-        <div className="section-subtitle">
-          Live music, face painting, and fun for the whole family.
-        </div>
-      </FadeIn>
 
       <FadeIn>
         <div className="dm-feature">

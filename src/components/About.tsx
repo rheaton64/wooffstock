@@ -6,7 +6,7 @@ export default function About() {
       <FadeIn><div className="section-label">Who We Are</div></FadeIn>
       <FadeIn><div className="section-title">About Wooffstock</div></FadeIn>
       <FadeIn>
-        <div className="section-subtitle">
+        <div className="about-belief">
           We believe all animals deserve a safe and loving home.
         </div>
       </FadeIn>
