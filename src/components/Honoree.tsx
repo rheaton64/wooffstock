@@ -4,11 +4,11 @@ import FadeIn from "./FadeIn";
 export default function Honoree() {
   return (
     <section className="honoree" id="honoree">
-      <FadeIn><div className="section-label">Celebrating</div></FadeIn>
-      <FadeIn><div className="section-title">Our Guest of Honor</div></FadeIn>
+      <FadeIn><div className="section-label">Our May 2026 Honoree</div></FadeIn>
+      <FadeIn><div className="section-title">Dr. Renee Bayha</div></FadeIn>
       <FadeIn>
         <div className="section-subtitle">
-          This year&apos;s event celebrates a beloved member of our community.
+          At our May benefit, we honored a beloved member of our community — in her own words.
         </div>
       </FadeIn>
 

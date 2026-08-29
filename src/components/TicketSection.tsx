@@ -48,33 +48,11 @@ export default function TicketSection() {
     return (
         <section className="tickets" id="tickets">
             <FadeIn>
-                <div className="section-label">Thank You</div>
+                <div className="section-label">Support the Rescues</div>
             </FadeIn>
             <FadeIn>
-                <div className="section-title">We&apos;re Sold Out!</div>
+                <div className="section-title">Make a Donation</div>
             </FadeIn>
-            <FadeIn>
-                <div className="section-subtitle">
-                    <div>Every ticket at Wooffstock 2026 has been claimed.</div>
-                    <div>
-                        Thank you for the overwhelming support of our local
-                        rescues.
-                    </div>
-                </div>
-            </FadeIn>
-
-            <FadeIn>
-                <div className="sold-out-panel">
-                    <div className="sold-out-stamp">Sold Out</div>
-                    <h3 className="sold-out-heading">See you on May 2nd!</h3>
-                    <p className="sold-out-message">
-                        We&apos;re humbled by the response from our community.
-                        If you weren&apos;t able to grab a ticket, you can still
-                        make a difference for the animals below.
-                    </p>
-                </div>
-            </FadeIn>
-
             <FadeIn>
                 <div className="donation-section">
                     <div className="donation-inner">
@@ -86,10 +64,7 @@ export default function TicketSection() {
                             className="ticket-dog-photo"
                         />
                         <div className="donation-text">
-                            <h3>
-                                Pete the Cat — Can&apos;t Attend? You Can Still
-                                Help!
-                            </h3>
+                            <h3>Pete the Cat — Lend a Helping Paw!</h3>
                             <p>
                                 Make a donation to support our furry friends in
                                 need.

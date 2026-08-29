@@ -2,9 +2,9 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-logo">WOOFFSTOCK</div>
-      <div className="footer-tagline">Sponsored by Pound Ridge Community Church and Wooffstock Press</div>
+      <div className="footer-tagline">Sponsored by Wooffstock Press and Pound Ridge Community Church</div>
       <div className="footer-info">
-        Saturday, May 2nd · 7:00 – 9:30 PM · Waccabuc Country Club Carriage House, Waccabuc, NY
+        Sunday, October 4th · 1:00 – 4:00 PM · Pound Ridge Community Church, Pound Ridge, NY
       </div>
       <div className="footer-info">
         Contact Nadine Ashby at <a href="tel:9144690815">(914) 469-0815</a> or{" "}

@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import DontMiss from "@/components/DontMiss";
 import About from "@/components/About";
-import Entertainment from "@/components/Entertainment";
-import Music from "@/components/Music";
-import Honoree from "@/components/Honoree";
+import Retrospective from "@/components/Retrospective";
 import Rescues from "@/components/Rescues";
 import News from "@/components/News";
 import TicketSection from "@/components/TicketSection";
@@ -14,12 +13,11 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <DontMiss />
       <About />
-      <Entertainment />
-      <Music />
-      <Honoree />
       <Rescues />
       <News />
+      <Retrospective />
       <TicketSection />
       <Footer />
     </>
